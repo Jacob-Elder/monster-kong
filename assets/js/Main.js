@@ -1,7 +1,3 @@
-var MyGame = {
-
-};
-
 var game = new Phaser.Game(800, 600, Phaser.AUTO, "gameContainer");
 
 game.state.add("Preloader", MyGame.Preloader);
