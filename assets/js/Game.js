@@ -12,6 +12,10 @@ MyGame.Game.prototype = {
 
   create: function() {
 
+    this.ground = this.add.sprite(0, 520, "ground");
+    this.physics.arcade.enable(this.ground);
+    this.ground.body.allowGravity = false;
+    this.ground.body.immovable = true;    
 
 
   },
