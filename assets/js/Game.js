@@ -17,6 +17,10 @@ MyGame.Game.prototype = {
     this.ground.body.allowGravity = false;
     this.ground.body.immovable = true;    
 
+    this.platform = this.add.sprite(0, 300, "platform");
+    this.physics.arcade.enable(this.platform);
+    this.platform.body.allowGravity = false;
+    this.platform.body.immovable = true;    
 
   },
 
