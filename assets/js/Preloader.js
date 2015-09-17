@@ -1,4 +1,8 @@
-MyGame.Preloader = function() {
+var MyGame = {
+
+};
+
+MyGame.Preloader = function(game) {
 
 };
 
