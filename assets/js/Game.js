@@ -26,11 +26,27 @@ MyGame.Game.prototype = {
     this.player.anchor.setTo(0.5);
     this.player.animations.add("walking", [0, 1, 2, 1], 6, true);
     this.physics.arcade.enable(this.player);
+
+    // Controls
+    this.cursors = this.input.keyboard.createCursorKeys();
+
   },
 
   update: function() {
 
 
+    // Controls
+    this.player.body.velocity.x = 0;
+    if (this.cursors.left.isDown) {
+      this.player.body.velocity.x = -this.RUNNING_SPEED;
+    }
+    else if (this.cursors.right.isDown) {
+      this.player.body.velocity.x = this.RUNNING_SPEED;
+    }
+
+    if(this.cursors.up.isDown && this.player.body.touching.down) {
+      this.player.body.velocity.y = -this.JUMPING_SPEED;
+    }
 
   },
 
