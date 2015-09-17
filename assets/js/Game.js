@@ -1,4 +1,4 @@
-MyGame.Game = function() {};
+MyGame.Game = function(game) {};
 MyGame.Game.prototype = {
 
   init: function() {},
