@@ -1,4 +1,4 @@
-MyGame.MainMenu = function() {};
+MyGame.MainMenu = function(game) {};
 MyGame.MainMenu.prototype = {
 
   create: function() {
