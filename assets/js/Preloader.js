@@ -5,7 +5,6 @@ MyGame.Preloader = function() {
 MyGame.Preloader.prototype = {
   init: function() {
 
-    this.input.maxPointers = 1;
     this.scale.pageAlignHorizontally = true;
 
   },
