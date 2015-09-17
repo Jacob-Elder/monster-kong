@@ -22,6 +22,10 @@ MyGame.Game.prototype = {
     this.platform.body.allowGravity = false;
     this.platform.body.immovable = true;    
 
+    this.player = this.add.sprite(100, 200, "player", 3);
+    this.player.anchor.setTo(0.5);
+    this.player.animations.add("walking", [0, 1, 2, 1], 6, true);
+    this.physics.arcade.enable(this.player);
   },
 
   update: function() {
