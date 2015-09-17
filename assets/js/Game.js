@@ -17,11 +17,23 @@ MyGame.Game.prototype = {
     this.ground.body.allowGravity = false;
     this.ground.body.immovable = true;    
 
-    this.platform = this.add.sprite(0, 300, "platform");
-    this.physics.arcade.enable(this.platform);
-    this.platform.body.allowGravity = false;
-    this.platform.body.immovable = true;    
+    // platforms group
+    var platformData = [
+      {"x": 0, "y": 430},
+      {"x": 45, "y": 560},
+      {"x": 90, "y": 290},
+      {"x": 0, "y": 140}
+    ];
 
+    this.platforms = this.add.group();
+    this.platforms.enableBody = true;
+    platformData.forEach(function(element) {
+      this.platforms.create(element.x, element.y, "platform");
+    }, this);
+    this.platforms.setAll("body.immovable", true);
+    this.platforms.setAll("body.allowGravity", false);
+    
+    // player
     this.player = this.add.sprite(100, 200, "player", 3);
     this.player.anchor.setTo(0.5);
     this.player.animations.add("walking", [0, 1, 2, 1], 6, true);
@@ -38,7 +50,7 @@ MyGame.Game.prototype = {
 
   update: function() {
 
-    this.physics.arcade.collide(this.player, this.platform);
+    this.physics.arcade.collide(this.player, this.platforms);
     this.physics.arcade.collide(this.player, this.ground);
 
     // Controls
