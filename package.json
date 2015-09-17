@@ -4,12 +4,14 @@
   "description": "A simple clone of Donkey Kong in Phaser",
   "scripts": {
     "updatePhaser": "echo '=> update Phaser in assets/js/' && cp node_modules/phaser/build/phaser.min.js assets/js",
+    "lint": "echo '=> linting' && jshint assets/js/*.js --exclude assets/js/phaser.min.js",
     "server": "http-server -o"
   },
   "author": "Mauro Gestoso",
   "license": "ISC",
   "devDependencies": {
     "http-server": "^0.8.0",
+    "jshint": "^2.8.0",
     "phaser": "^2.4.3"
   }
 }
