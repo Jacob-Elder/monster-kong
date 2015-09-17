@@ -2,7 +2,7 @@ MyGame.Game = function(game) {};
 MyGame.Game.prototype = {
 
   init: function() {
-
+    
     this.physics.startSystem(Phaser.Physics.ARCADE);
     this.physics.arcade.gravity.y = 1000;
 
@@ -19,17 +19,14 @@ MyGame.Game.prototype = {
     this.ground.body.allowGravity = false;
     this.ground.body.immovable = true;    
 
-    // platforms group
-    var platformData = [
-      {"x": 0, "y": 430},
-      {"x": 45, "y": 560},
-      {"x": 90, "y": 290},
-      {"x": 0, "y": 140}
-    ];
+    // level data
+    this.levelData = JSON.parse(this.game.cache.getText("level"));
+    console.log(this.levelData);    
 
+    // platforms group
     this.platforms = this.add.group();
     this.platforms.enableBody = true;
-    platformData.forEach(function(element) {
+    this.levelData.platformData.forEach(function(element) {
       this.platforms.create(element.x, element.y, "platform");
     }, this);
     this.platforms.setAll("body.immovable", true);

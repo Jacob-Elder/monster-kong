@@ -16,6 +16,9 @@ MyGame.Preloader.prototype = {
     this.load.spritesheet("player", "img/player_spritesheet.png", 28, 30, 5, 1, 1);
     this.load.spritesheet("fire", "img/player_spritesheet.png", 20, 21, 2, 1, 1);
 
+    // this.load.json("level", "data/level.json"); 
+    this.load.text("level", "data/level.json");
+
   },
 
   create: function() {
