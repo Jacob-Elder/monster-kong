@@ -34,6 +34,8 @@ MyGame.Game.prototype = {
 
   update: function() {
 
+    this.physics.arcade.collide(this.player, this.platform);
+    this.physics.arcade.collide(this.player, this.ground);
 
     // Controls
     this.player.body.velocity.x = 0;
