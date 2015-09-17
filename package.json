@@ -1,0 +1,15 @@
+{
+  "name": "monster-kong",
+  "version": "0.0.1",
+  "description": "A simple clone of Donkey Kong in Phaser",
+  "scripts": {
+    "updatePhaser": "echo '=> update Phaser in assets/js/' && cp node_modules/phaser/build/phaser.min.js assets/js",
+    "server": "http-server -o"
+  },
+  "author": "Mauro Gestoso",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.8.0",
+    "phaser": "^2.4.3"
+  }
+}
