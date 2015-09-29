@@ -59,9 +59,17 @@ MyGame.Game.prototype = {
     this.player.body.velocity.x = 0;
     if (this.cursors.left.isDown || this.player.customParams.movingLeft) {
       this.player.body.velocity.x = -this.RUNNING_SPEED;
+      this.player.scale.setTo(1, 1);
+      this.player.play("walking");
     }
     else if (this.cursors.right.isDown || this.player.customParams.movingRight) {
       this.player.body.velocity.x = this.RUNNING_SPEED;
+      this.player.scale.setTo(-1, 1);
+      this.player.play("walking");
+    }
+    else {
+      this.player.animations.stop();
+      this.player.frame = 3;
     }
 
     if ((this.cursors.up.isDown || this.player.customParams.mustJump) && this.player.body.touching.down) {
