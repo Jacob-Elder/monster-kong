@@ -30,6 +30,19 @@ MyGame.Game.prototype = {
     }, this);
     this.platforms.setAll("body.immovable", true);
     this.platforms.setAll("body.allowGravity", false);
+
+    // fires
+    this.fires = this.add.group();
+    this.fires.enableBody = true;
+
+    var fire;
+    this.levelData.fireData.forEach(function(element){
+      fire = this.fires.create(element.x, element.y, "fire");
+      fire.animations.add("fire", [0, 1], 4, true);
+      fire.play('fire');
+    }, this);
+    this.fires.setAll("body.allowGravity", false);
+
     
     // player
     this.player = this.add.sprite(10, 545, "player", 3);
