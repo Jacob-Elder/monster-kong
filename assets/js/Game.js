@@ -54,6 +54,11 @@ MyGame.Game.prototype = {
     this.player.animations.add("walking", [0, 1, 2, 1], 6, true);
     this.physics.arcade.enable(this.player);
     this.player.customParams = {};
+    // barrels
+    this.barrels = this.add.group();
+    this.barrels.enableBody = true;
+    this.createBarrel();
+    this.barrelCreator = this.game.time.events.loop(Phaser.Timer.SECOND * this.levelData.barrelFrequency, this.createBarrel, this);
 
     // camera
     this.camera.follow(this.player);
