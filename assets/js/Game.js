@@ -146,4 +146,9 @@ MyGame.Game.prototype = {
 
   },
 
+  killPlayer: function(player, fire){
+    console.log("Ouch!");
+    game.state.start("Game");
+  },
+
 };
