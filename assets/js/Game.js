@@ -105,6 +105,12 @@ MyGame.Game.prototype = {
       this.player.customParams.mustJump = false;
     }
 
+    this.barrels.forEach(function(barrel){
+      if(barrel.x < 10 && barrel.y > 600){
+        barrel.kill();
+      }
+    }, this);
+
   },
 
   createOnscreenControls: function() {
