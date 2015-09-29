@@ -21,7 +21,6 @@ MyGame.Game.prototype = {
 
     // level data
     this.levelData = JSON.parse(this.game.cache.getText("level"));
-    console.log(this.levelData);    
 
     // platforms group
     this.platforms = this.add.group();
