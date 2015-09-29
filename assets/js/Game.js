@@ -54,6 +54,8 @@ MyGame.Game.prototype = {
     this.player.animations.add("walking", [0, 1, 2, 1], 6, true);
     this.physics.arcade.enable(this.player);
     this.player.customParams = {};
+    this.player.body.collideWorldBounds = true;
+
     // barrels
     this.barrels = this.add.group();
     this.barrels.enableBody = true;
