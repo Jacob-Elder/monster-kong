@@ -43,6 +43,10 @@ MyGame.Game.prototype = {
     }, this);
     this.fires.setAll("body.allowGravity", false);
 
+    // goal
+    this.goal = this.add.sprite(this.levelData.goal.x, this.levelData.goal.y, "goal");
+    this.physics.arcade.enable(this.goal);
+    this.goal.body.allowGravity = false;
     
     // player
     this.player = this.add.sprite(10, 545, "player", 3);
