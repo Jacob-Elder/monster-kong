@@ -175,6 +175,21 @@ MyGame.Game.prototype = {
   win: function(player, goal){
     alert("You win!");
     game.state.start("Game");
-  }
+  },
+
+  createBarrel: function() {
+    // get first dead sprite
+    var barrel = this.barrels.getFirstExists(false);
+
+    if(!barrel) {
+      barrel = this.barrels.create(0, 0, "barrel");
+    }
+
+    barrel.reset(this.levelData.goal.x, this.levelData.goal.y);
+    barrel.body.velocity.x = this.levelData.barrelSpeed;
+    barrel.body.collideWorldBounds = true;
+    barrel.body.bounce.set(1, 0);
+
+  },
 
 };
