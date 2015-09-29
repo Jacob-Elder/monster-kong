@@ -156,4 +156,9 @@ MyGame.Game.prototype = {
     game.state.start("Game");
   },
 
+  win: function(player, goal){
+    alert("You win!");
+    game.state.start("Game");
+  }
+
 };
